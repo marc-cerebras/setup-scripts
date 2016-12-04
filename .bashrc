@@ -116,6 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias xflux='xflux -z 53711'
 
-source ~/workspace/scripts/cloudlab-cmds.sh
+# alias xflux='xflux -z 53711'
+# source ~/workspace/scripts/cloudlab-cmds.sh
