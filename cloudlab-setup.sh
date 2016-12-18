@@ -6,7 +6,8 @@ wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
 sudo add-apt-repository -y 'deb http://llvm.org/apt/jessie llvm-toolchain-jessie-3.8 main'
 sudo apt-get update
 sudo apt-get install -y build-essential gcc-4.9 g++-4.9 clang-3.8 lldb-3.8 gdb cmake git 
-sudo apt-get install -y protobuf-compiler libprotobuf-dev flex bison libnuma-dev
+sudo apt-get install -y protobuf-compiler libprotobuf-dev flex bison libnuma-dev numactl
+sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -r`
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.8 20
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 20
 sudo update-alternatives --install /usr/bin/cc cc /usr/bin/clang-3.8 20

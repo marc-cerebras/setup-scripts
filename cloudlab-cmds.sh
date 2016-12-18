@@ -1,4 +1,4 @@
-export CL_MACHINE=cramja@c220g2-011106.wisc.cloudlab.us
+export CL_MACHINE=cramja@c220g2-011014.wisc.cloudlab.us
 
 
 clsync() {
@@ -19,6 +19,7 @@ clupdate() {
 }
 
 clinit() {
-	rsync -avzhe 'ssh' /home/marc/workspace/scripts/cloudlab-setup.sh $CL_MACHINE:~
+	rsync -avzhe 'ssh' /Users/cramja/workspace/script-kitty/cloudlab-setup.sh $CL_MACHINE:~
+	#rsync -avzhe 'ssh' /home/marc/workspace/script-kitty/cloudlab-setup.sh $CL_MACHINE:~
 	ssh $CL_MACHINE "chmod u+x ./cloudlab-setup.sh && ./cloudlab-setup.sh"
 }
