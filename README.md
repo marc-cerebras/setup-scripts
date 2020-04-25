@@ -14,9 +14,9 @@ sudo apt-get install git -y
 3. Paste the copied content into the "key field" and press "Add key"
 
 
-```
+```bash
 cd $HOME/Downloads
 git clone git@github.com:cramja/setup-scripts.git
 cd setup-scripts
-./setup-ubuntu.sh
+sudo ./setup-ubuntu.sh
 ```

@@ -1,7 +1,11 @@
+#!/bin/bash
+
 ## Run in the repo root directory!
 
 # Install basic dependencies
 
+# 2 85
+sudo apt-get update
 sudo apt-get install \
   apt-transport-https \
   build-essential \
@@ -17,15 +21,20 @@ sudo apt-get install \
   make \
   openssh-client \
   python3-pip \
+  python3-dev \
   python3-psycopg2 \
   rsync \
   ruby-full \
   software-properties-common \
   sqlite3 \
   unixodbc-dev \
+  wget \
   vim \
   xbindkeys \
   zlib1g-dev \
+  unzip \
+  zip \
+  xclip \
   -y
 
 
@@ -67,9 +76,11 @@ sudo apt-get install \
 
 rm $HOME/.bashrc
 cp .bashrc $HOME/.bashrc
+cp .xbindkeysrc $HOME/.xbindkeysrc
 mkdir $HOME/workspace
 mkdir $HOME/server
 mkdir $HOME/gems
+
 
 ## sublime preferences
 cp Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/
@@ -82,7 +93,7 @@ sudo systemctl enable docker
 ## set the default python to 3 and update python
 PY3=$(ls /usr/bin | grep -E '^python3.[0-9]$')
 sudo update-alternatives --install /usr/bin/python python /usr/bin/${PY3} 1
-pip3 update --upgrade pip
+pip3 install --upgrade pip
 pip3 install virtualenv
 
 ## Jekyll
