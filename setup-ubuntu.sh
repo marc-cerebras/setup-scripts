@@ -17,6 +17,7 @@ sudo apt-get install \
   graphviz \
   libsqlite3-dev \
   libssl-dev \
+  libnotify-bin \
   htop \
   make \
   openssh-client \
@@ -76,6 +77,7 @@ sudo apt-get install \
 
 rm $HOME/.bashrc
 cp .bashrc $HOME/.bashrc
+cp .bash_aliases $HOME/.bash_aliases
 cp .xbindkeysrc $HOME/.xbindkeysrc
 mkdir $HOME/workspace
 mkdir $HOME/server
