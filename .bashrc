@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -56,13 +56,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-source ~/.colors.sh
-source ~/.prompt.sh
-
 if [ "$color_prompt" = yes ]; then
-    export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -86,6 +83,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -116,6 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ruby
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
 
-# alias xflux='xflux -z 53711'
-# source ~/workspace/scripts/cloudlab-cmds.sh
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.cargo/bin
+
+export DATACHAT_ROOT=/home/marc/workspace/datachat
+export DATACHAT_FILE_SYS=$HOME/datachat/shared
+export GOPATH=${DATACHAT_ROOT}/web_server:${GOPATH}
