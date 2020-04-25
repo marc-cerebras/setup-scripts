@@ -13,6 +13,7 @@ sudo apt-get install \
   graphviz \
   libsqlite3-dev \
   libssl-dev \
+  htop \
   make \
   openssh-client \
   python3-pip \

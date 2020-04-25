@@ -119,13 +119,3 @@ fi
 # ruby
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-
-# Go
-export PATH=$PATH:/usr/local/go/bin
-
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.cargo/bin
-
-export DATACHAT_ROOT=/home/marc/workspace/datachat
-export DATACHAT_FILE_SYS=$HOME/datachat/shared
-export GOPATH=${DATACHAT_ROOT}/web_server:${GOPATH}
