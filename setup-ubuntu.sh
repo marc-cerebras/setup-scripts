@@ -102,6 +102,9 @@ gem install jekyll bundler
 
 # Things that are not scripted yet
 
+
+echo "run commands:"
+echo "  sudo update-alternatives –config editor" # set vim
 echo "download/install:"
 echo "  go: https://golang.org/doc/install"
 echo "  node: https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/"
