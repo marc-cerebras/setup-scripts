@@ -20,3 +20,5 @@ git clone git@github.com:cramja/setup-scripts.git
 cd setup-scripts
 sudo ./setup-ubuntu.sh
 ```
+
+[OLED / Linux](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1831587)
