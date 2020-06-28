@@ -10,6 +10,7 @@ sudo apt-get install \
   apt-transport-https \
   build-essential \
   ca-certificates \
+  ctags \
   curl \
   git \
   gnupg \
@@ -28,6 +29,7 @@ sudo apt-get install \
   ruby-full \
   software-properties-common \
   sqlite3 \
+  tmux \
   unixodbc-dev \
   wget \
   vim \
@@ -83,6 +85,14 @@ mkdir $HOME/workspace
 mkdir $HOME/server
 mkdir $HOME/gems
 
+## vimrc
+# https://blog.miguelgrinberg.com/post/video-setting-up-vim-to-work-with-python-applications
+curl -fLo ~/.vimrc \
+    https://gist.githubusercontent.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4/raw/c56ce4c929f7b95fc2a96c483f3e498b4d1d7fdf/.vimrc
+
+## tmux
+curl -fLo ~/.tmux.conf \
+    https://gist.githubusercontent.com/miguelgrinberg/19f7b1d74ae33fd622e080d43dc03ea8/raw/b17d587ea554bac240767fad10491116863d270a/.tmux.conf
 
 ## sublime preferences
 cp Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/
