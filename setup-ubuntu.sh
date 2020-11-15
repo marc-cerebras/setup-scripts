@@ -10,7 +10,6 @@ sudo apt-get install \
   apt-transport-https \
   build-essential \
   ca-certificates \
-  ctags \
   curl \
   git \
   gnupg \
@@ -21,6 +20,7 @@ sudo apt-get install \
   libnotify-bin \
   htop \
   make \
+  nodejs \
   openssh-client \
   python3-pip \
   python3-dev \
@@ -32,12 +32,13 @@ sudo apt-get install \
   tmux \
   unixodbc-dev \
   wget \
-  vim \
   xbindkeys \
   zlib1g-dev \
   unzip \
   zip \
+  vim \
   xclip \
+  zsh \
   -y
 
 
@@ -46,6 +47,7 @@ sudo apt-get install \
 ## sublime
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
 
 ## docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -65,11 +67,10 @@ echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sud
 
 sudo apt-get update
 sudo apt-get install \
-  containerd.io \
-  docker-ce  \
+  docker-ce \
   docker-ce-cli \
+  containerd.io \
   docker-compose \
-  google-chrome-stable \
   spotify-client  \
   sublime-text  \
   -y
@@ -111,6 +112,8 @@ pip3 install virtualenv
 ## Jekyll
 gem install jekyll bundler
 
+## Oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Things that are not scripted yet
 
@@ -122,6 +125,7 @@ echo "  go: https://golang.org/doc/install"
 echo "  node: https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/"
 echo "  pycharm: https://www.jetbrains.com/pycharm/download/#section=linux"
 echo "  fileserver: rsync -avzhe ssh marc@marc-laptop.local:/home/marc/server $HOME/server"
+echo "  set default shell to zsh zsh: chsh -s /bin/zsh"
 echo ""
 echo "login:"
 echo "  chrome"
