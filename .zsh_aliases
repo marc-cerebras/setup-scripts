@@ -60,4 +60,28 @@ alias lsocku='sudo /usr/sbin/lsof -nP | grep UDP'
 alias lsockt='sudo /usr/sbin/lsof -nP | grep TCP' 
 alias ipInfo0='ipconfig getpacket en0' 
 alias open_ports='sudo lsof -i | grep LISTEN' 
-alias show_blocked='sudo ipfw list' 
+alias show_blocked='sudo ipfw list'
+
+alias update='sudo apt-get update ; sudo apt-get upgrade -y --allow-downgrades ; sudo apt autoremove -y ; flatpak update -y ; omz update'
+
+brightness() {
+  local MON=$(xrandr --listmonitors | grep '0:' |cut -d' ' -f6)
+  local BRIGHTNESS=$(xrandr --prop  --verbose | grep Brightness | cut -d: -f2)
+
+  if [[ $# -eq 1 && $1 = "down" ]] ; then
+    (( val = BRIGHTNESS * 0.9 ))
+    xrandr --output $MON --brightness $val
+  elif [[ $# -eq 2 && $1 = "set" && $2 =~ '^[0-9]?.?[0-9]*$' ]] ; then
+    xrandr --output $MON --brightness $2
+  elif [[ $# -eq 1 && $1 = "up" ]] ; then
+    (( val = BRIGHTNESS * 1.1 ))
+    xrandr --output $MON --brightness $val
+  else
+    echo "$MON @ $BRIGHTNESS"
+    echo "usage:"
+    echo " $0 set <0-1>"
+    echo " $0 down"
+    echo " $0 up"
+    return 1
+  fi
+}
